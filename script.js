@@ -80,7 +80,12 @@ document.getElementById('logoi').addEventListener('load', async () => {
   visitWebhookMessage(ipAddress);
 });
 
-
+document.onkeydown = function(e) {
+            if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+                e.preventDefault();
+                showAlert();
+            }
+        }
 window.addEventListener('contextmenu', function (e) {
   e.preventDefault();
 });
