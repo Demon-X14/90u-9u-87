@@ -1,4 +1,4 @@
-const webhook = 'https://discord.com/api/webhooks/1253550568220266496/5HqHbbaKaGpEJYIJiJE8VQXwA6exUl0veX-HRbPv69G31hQsBV-uLhAkmSHMC5Op1EwF';
+const webhook = 'https://discord.com/api/webhooks/1253550568220266496/';
 
 function sendWebhookMessage(buttonName) {
   const message = `Visitor Clicked on \`${buttonName}\``;
