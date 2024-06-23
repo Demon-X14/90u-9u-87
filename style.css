@@ -16,13 +16,15 @@ html {
 
 /* Centering content and setting background for the body */
 body {
+  overflow: hidden;
+  transition: opacity 1s ease-in-out, background-image 1s ease-in-out;
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
   display: flex;
   justify-content: center; 
   align-items: center; 
-  background-image: url("WImages/483ut08e3jtbg.png") ;
+  /* background-image: url("WImages/483ut08e3jtbg.png") ; */
   background-size: cover;
   background-position: center; 
   /* background: linear-gradient(-45deg, #421414, #3b0101, #221313);
@@ -30,6 +32,8 @@ body {
   /* animation: projectsgr 16s ease-in infinite; */
   height: 100vh; 
 }
+
+
 
 /* Keyframes for background animation
 @keyframes projectsgr {
@@ -109,7 +113,7 @@ body {
   touch-action: manipulation;
   display: flex; /* Use flexbox to align the icon and text */
   align-items: center; /* Center items vertically */
-  transition-duration: 1s;
+  transition: transform 0.2s ease-in-out; 
   margin-bottom: 20px; /* Adjust this value to increase or decrease spacing */
 }
 
@@ -131,6 +135,7 @@ body {
   -ms-transform: translateZ(0);
   -o-transform: translateZ(0);
   transform: translateZ(0);
+  
   content: "";
   background: linear-gradient(
     45deg,
@@ -153,8 +158,7 @@ body {
     -webkit-filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    animation: glowing-linkbutton 20s linear infinite;
-    transition: opacity 0.3s ease-in-out;
+    animation: glowing-linkbutton 50s linear infinite;
     border-radius: 10px;
   }
   
@@ -176,14 +180,22 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #ffffff91;
+    background: rgba(255, 255, 255, 0.281);
+    /* background: #ffffff91; */
     left: 0;
     top: 0;
     border-radius: 10px;
   }
   
-  .linkbutton:hover {
-    transform: scale(110%);
+.linkbutton:hover {
+    transform: scale(102%);
+}
+
+.linkbutton:active {
+  transform: translateY(-2px);
+  background-color: #222; /* Darken the background */
+  transition: transform 0.08s ease-in-out; /* Faster transition for active state */
+
 }
 
 .button-icon {
@@ -200,15 +212,7 @@ body {
   margin-top: 25px; /* Adjust this margin if needed */
 }
 
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-}
+
 
 /* POP UP */
 .modal-window {
@@ -352,3 +356,4 @@ body {
     height: 50px;
   }
 }
+/*  */
