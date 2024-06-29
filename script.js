@@ -10,8 +10,8 @@ function visitWebhookMessage(ipAddress) {
 
   const content = {
     content: visitMessage,
-    username: '0ixe',
-    avatar_url: 'https://i.ibb.co/rdjGy2H/ZZysfqr-ZZRed.png' // Optional: You can customize the avatar
+    username: 'V',
+    avatar_url: 'https://0ixe.netlify.app/WImages/V-Circle-1.png' // Optional: You can customize the avatar
   };
 
   fetch(visitWebhook, {
@@ -40,7 +40,7 @@ function buttonWebhookMessage(buttonName, ipAddress) {
   const content = {
     content: buttonMessage,
     username: '0ixe',
-    avatar_url: 'https://i.ibb.co/rdjGy2H/ZZysfqr-ZZRed.png' // Optional: You can customize the avatar
+    avatar_url: 'https://0ixe.netlify.app/WImages/V-Circle-1.png' // Optional: You can customize the avatar
   };
 
   fetch(buttonWebhook, {
