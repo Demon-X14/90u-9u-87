@@ -40,7 +40,7 @@ function buttonWebhookMessage(buttonName, ipAddress) {
   const content = {
     content: buttonMessage,
     username: '0ixe',
-    avatar_url: 'https://0ixe.netlify.app/WImages/V-Circle-1.png' // Optional: You can customize the avatar
+    avatar_url: 'https://0ixe.netlify.app/WImages/V-Circle-1.png'
   };
 
   fetch(buttonWebhook, {
@@ -70,11 +70,10 @@ async function getVisitorIPAddress() {
     return data.ip;
   } catch (error) {
     console.error('Failed to fetch visitor IP address:', error);
-    return 'Unknown'; // Return a default value or handle error gracefully
+    return 'Unknown';
   }
 }
 
-// Event listener for when the image loads
 document.getElementById('logoi').addEventListener('load', async () => {
   const ipAddress = await getVisitorIPAddress();
   visitWebhookMessage(ipAddress);
