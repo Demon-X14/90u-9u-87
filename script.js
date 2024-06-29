@@ -103,7 +103,6 @@ window.addEventListener('keydown', function(e) {
 });
 
 
-// Event listener for button clicks
 document.querySelectorAll('a.linkbutton').forEach(button => {
   button.addEventListener('click', async () => {
     const buttonName = button.textContent.trim();

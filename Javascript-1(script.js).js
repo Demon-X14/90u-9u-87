@@ -5,7 +5,7 @@ function sendWebhookMessage(buttonName) {
   const content = {
     content: message,
     username: '0ixe',
-    avatar_url: 'https://i.ibb.co/rdjGy2H/ZZysfqr-ZZRed.png'
+    avatar_url: ''
   };
 
   fetch(webhook, {

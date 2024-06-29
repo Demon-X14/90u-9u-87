@@ -1,7 +1,6 @@
 const backgroundImages = [
-    'url("WImages/483ut08e3jtbg.png")',
-    'url("WImages/483ut08e3jtbg1.png")',
-    'url("WImages/483ut08e3jtbg3.png")',
+    'url("WImages/483ut08e3jtbgw.png")',
+    'url("WImages/483ut08e3jtbgw1.png")',
 ];
 
 let intervalId;
@@ -15,14 +14,21 @@ function getNextBackgroundImage() {
 function updateBackgroundImage() {
     const newImage = getNextBackgroundImage();
     document.body.style.backgroundImage = newImage;
-    document.body.style.backgroundSize = 'cover'; //
-    document.body.style.backgroundRepeat = 'no-repeat'; 
-    document.body.style.backgroundPosition = 'center center'; 
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundRepeat = 'no-repeat';
+    document.body.style.backgroundPosition = 'center center';
+
+    const modalDiv = document.querySelector('.modal-window > div');
+    modalDiv.style.backgroundImage = newImage;
+    modalDiv.style.backgroundSize = 'cover';
+    modalDiv.style.backgroundPosition = 'center center';
+
     console.log('%cBackground image updated:', 'color: blue; font-size: 16px; font-weight: bold;', newImage);
 }
 
 function startBackgroundRotation() {
-    updateBackgroundImage(); 
+    updateBackgroundImage();
+    intervalId = setInterval(updateBackgroundImage, 60000); 
 }
 
 startBackgroundRotation();
