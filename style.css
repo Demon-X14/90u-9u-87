@@ -32,7 +32,7 @@ img{
 
 .logo img{
   border: #470000 solid 6px;
-  width: 17%;
+  width: 22%;
   margin-top: 30px;
   border-radius: 50%;
   position: absolute; 
@@ -174,11 +174,12 @@ img{
   flex-direction: column;
   justify-content: space-around; /* Adjust this for vertical spacing */
   align-items: center; /* Center items horizontally */
-  margin-top: 100px; /* Adjust this margin if needed */
+  margin-top: 200px; /* Adjust this margin if needed */
 }
 
 .blur {
   filter: blur(10px);
+  filter: brightness(5);
   z-index: -99;
 }
 
