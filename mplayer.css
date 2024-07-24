@@ -6,6 +6,7 @@ html {
 }
 
 .music-player {
+  font-size: medium;
   position: fixed;
   bottom: 20px;
   left: -250px; /* Start hidden to the left */
