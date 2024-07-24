@@ -33,4 +33,3 @@ document.querySelectorAll('a.linkbutton').forEach(button => {
     sendWebhookMessage(buttonName);
   });
 });
-    
