@@ -4,7 +4,7 @@
 
 [functions]
   # Directory where your serverless functions are located
-  directory = "netlify\functions"
+  directory = "netlify/functions"
 
 # Optional: Custom Headers
 [[headers]]
