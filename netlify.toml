@@ -1,0 +1,14 @@
+[build]
+  # Directory containing your static files
+  publish = "public" # Update to your directory
+
+[functions]
+  # Directory where your serverless functions are located
+  directory = "netlify-functions"
+
+# Optional: Custom Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
