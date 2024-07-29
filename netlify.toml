@@ -1,15 +1,13 @@
 [build]
-  command = "npm run start"
-  # Directory containing your static files
-  publish = "public" # Update to your directory
+  publish = "public" # Change this if `index.html` is not in the `public` directory
+  functions = "netlify/functions"
 
-[functions]
-  # Directory where your serverless functions are located
-  directory = "netlify/functions"
+[[redirects]]
+  from = "/visit-webhook"
+  to = "/.netlify/functions/visit-webhook"
+  status = 200
 
-# Optional: Custom Headers
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
+[[redirects]]
+  from = "/button-webhook"
+  to = "/.netlify/functions/button-webhook"
+  status = 200

@@ -1,9 +1,8 @@
-// Function to construct the webhook URL
-
 const avatarURL = "https://0ixe.site/WImages/DSquared.png";
+
 function getWebhookURL(endpoint) {
-  // You can adjust this base URL as needed or use environment variables
-  const baseURL = "https://0ixe.site/";
+  // Base URL for Netlify Functions
+  const baseURL = "/.netlify/functions";
   return `${baseURL}/${endpoint}`;
 }
 
@@ -19,7 +18,6 @@ function visitWebhookMessage(ipAddress) {
   };
 
   fetch(getWebhookURL("visit-webhook"), {
-    // Use dynamic URL
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -53,7 +51,6 @@ function buttonWebhookMessage(buttonName, ipAddress) {
   };
 
   fetch(getWebhookURL("button-webhook"), {
-    // Use dynamic URL
     method: "POST",
     headers: {
       "Content-Type": "application/json",

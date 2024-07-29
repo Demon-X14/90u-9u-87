@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const axios = require("axios");
 const app = express();
-const port = 3000;
 
 // Middleware to serve static files from 'public' directory
 app.use(express.static(path.join(__dirname, "public")));
@@ -19,8 +18,8 @@ const buttonWebhook =
 // Endpoint to handle visit webhook
 app.post("/visit-webhook", async (req, res) => {
   try {
-    const response = await axios.post(visitWebhook, req.body);
-    res.status(200).send("Webhook message sent successfully 1");
+    await axios.post(visitWebhook, req.body);
+    res.status(200).send("Webhook message sent successfully");
   } catch (error) {
     console.error("Failed to send webhook message:", error);
     res.status(500).send("Failed to send webhook message");
@@ -30,17 +29,12 @@ app.post("/visit-webhook", async (req, res) => {
 // Endpoint to handle button webhook
 app.post("/button-webhook", async (req, res) => {
   try {
-    const response = await axios.post(buttonWebhook, req.body);
-    res.status(200).send("Webhook message sent successfully 1 B");
+    await axios.post(buttonWebhook, req.body);
+    res.status(200).send("Webhook message sent successfully");
   } catch (error) {
     console.error("Failed to send webhook message:", error);
     res.status(500).send("Failed to send webhook message");
   }
 });
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, "public")));
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+module.exports = app;
