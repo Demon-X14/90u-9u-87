@@ -3,7 +3,7 @@
 const avatarURL = "https://0ixe.site/WImages/DSquared.png";
 function getWebhookURL(endpoint) {
   // You can adjust this base URL as needed or use environment variables
-  const baseURL = "http://localhost:3000";
+  const baseURL = "https://0ixe.site/";
   return `${baseURL}/${endpoint}`;
 }
 
