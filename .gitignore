@@ -1,0 +1,7 @@
+no
+node_modules
+BACKUP
+# Local Netlify folder
+.netlify
+
+.env

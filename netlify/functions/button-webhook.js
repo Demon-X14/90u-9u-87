@@ -1,8 +1,6 @@
 const axios = require("axios");
 
-// Webhook URL for button click
-const buttonWebhook =
-  "https://discord.com/api/webhooks/1253467538898157620/7itL4pvUKc0VE-UBiumT9VRcO40ZZFkcAq6rS1kWsYDcDZEDUDF1sIkggsz9ExQvXiSN";
+const buttonWebhook = process.env.BUTTON_WEBHOOK_URL;
 
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
@@ -13,8 +11,18 @@ exports.handler = async (event) => {
   }
 
   try {
-    const data = JSON.parse(event.body);
-    await axios.post(buttonWebhook, data);
+    const { buttonName, ipAddress, pageURL } = JSON.parse(event.body);
+
+    const message = `## Visitor Clicked on \`${buttonName}\` Button
+## Visitor's IP Address: ${ipAddress}
+## Visited URL: ${pageURL}`;
+
+    await axios.post(buttonWebhook, {
+      content: message,
+      username: "0ixe",
+      avatar_url: "https://0ixe.site/WImages/DSquared.png",
+    });
+
     return {
       statusCode: 200,
       body: JSON.stringify({ message: "Webhook message sent successfully" }),

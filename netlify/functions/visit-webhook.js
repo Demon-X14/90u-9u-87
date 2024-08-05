@@ -1,20 +1,35 @@
 const axios = require("axios");
 
+// Webhook URL for visit (set via environment variable)
+const visitWebhook = process.env.VISIT_WEBHOOK_URL;
+
 exports.handler = async (event) => {
-  const visitWebhook =
-    "https://discord.com/api/webhooks/1253467404093362330/OTY1gXsST6iBZJX1oMkkygCduPxzUnYOGMlTILa2tImhNMm1Z93Gn0DMBzkLpy3s0aG6";
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ message: "Method not allowed" }),
+    };
+  }
 
   try {
-    await axios.post(visitWebhook, JSON.parse(event.body));
+    const ipAddress = event.headers["x-forwarded-for"] || "Unknown"; // Get IP address from request headers
+    const visitMessage = `## Visitor's IP Address: ${ipAddress} ## Visited URL: ${event.headers.origin}`;
+
+    await axios.post(visitWebhook, {
+      content: visitMessage,
+      username: "Demon",
+      avatar_url: "https://0ixe.site/WImages/DSquared.png",
+    });
+
     return {
       statusCode: 200,
-      body: "Webhook message sent successfully",
+      body: JSON.stringify({ message: "Webhook message sent successfully" }),
     };
   } catch (error) {
     console.error("Failed to send webhook message:", error);
     return {
       statusCode: 500,
-      body: "Failed to send webhook message",
+      body: JSON.stringify({ message: "Failed to send webhook message" }),
     };
   }
 };
